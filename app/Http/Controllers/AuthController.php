@@ -32,7 +32,7 @@ class AuthController extends Controller{
 
         return response()->json(['message' => 'Successfully logged out']);
     }
-    /*
+
     public function refresh(){
         return $this->respondWithToken(auth()->refresh());
     }
@@ -44,7 +44,7 @@ class AuthController extends Controller{
             'expires_in' => auth()->factory()->getTTL() * 60
         ]);
     }
-    */
+
     public function register(Request $request){
         $validator=Validator::make($request->all(),[
             'name'=>'required',

@@ -7,10 +7,19 @@ use App\Models\School;
 
 class SchoolController extends Controller{
 
+    public function __construct(){
+        $this->middleware('auth:api');
+    }
+
     public function index(){
         $schools=School::all();
         //return $schools;
         return response()->json($schools);
+    }
+
+    public function show(School $school){
+        $school=School::find($school);
+        return response()->json($school);
     }
 
     public function store(SchoolPostRequest $request){

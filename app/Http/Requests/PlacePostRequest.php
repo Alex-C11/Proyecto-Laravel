@@ -23,9 +23,11 @@ class PlacePostRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'name'=>"required",
             'address'=>"required",
         ];
+
     }
 }

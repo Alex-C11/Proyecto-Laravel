@@ -27,15 +27,14 @@ Route::post('/schools',[SchoolController::class,'store']);
 Route::put('/schools/{school}',[SchoolController::class,'update']);
 Route::delete('/schools/{school}',[SchoolController::class,'destroy']);
 */
-Route::apiResource('schools', SchoolController::class);
-Route::apiResource('places', PlaceController::class);
+//Route::apiResource('schools', SchoolController::class);
 
-Route::group(['middleware' => 'api','prefix' => 'auth'], function ($router) {
+Route::group(['middleware' => 'api','prefix' => 'auth'], function () {
     Route::post('login',[AuthController::class,'login']);
     Route::post('logout',[AuthController::class,'logout']);
     Route::post('refresh',[AuthController::class,'refresh']);
     Route::post('register',[AuthController::class,'register']);
     Route::get('me',[AuthController::class,'me']);
+    Route::apiResource('schools', SchoolController::class);
+    Route::apiResource('places', PlaceController::class);
 });
-
-
