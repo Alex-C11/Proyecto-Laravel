@@ -27,6 +27,7 @@ Route::post('/schools',[SchoolController::class,'store']);
 Route::put('/schools/{school}',[SchoolController::class,'update']);
 Route::delete('/schools/{school}',[SchoolController::class,'destroy']);
 */
+
 //Route::apiResource('schools', SchoolController::class);
 
 Route::group(['middleware' => 'api','prefix' => 'auth'], function () {

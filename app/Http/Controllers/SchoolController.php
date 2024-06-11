@@ -26,7 +26,7 @@ class SchoolController extends Controller{
         $school = School::create($request->all());
 
         return response()->json([
-            'message' => "record saved successfully!",
+            'message' => "Registro creado exitosamente!",
             'school' => $school
         ], 200);
     }
@@ -43,7 +43,7 @@ class SchoolController extends Controller{
     public function destroy(School $school){
         $school->delete();
         return response()->json([
-            'message' => "record deleted successfully!",
+            'message' => "Registro eliminado exitosamente!",
         ], 200);
     }
 }

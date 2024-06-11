@@ -22,7 +22,7 @@ class PlaceController extends Controller{
     public function store(PlacePostRequest $request){
         $place = Place::create($request->all());
         return response()->json([
-            'message' => "record saved successfully!",
+            'message' => "Registro creado exitosamente!",
             'place' => $place
         ], 200);
     }
@@ -39,7 +39,7 @@ class PlaceController extends Controller{
     public function destroy(Place $place){
         $place->delete();
         return response()->json([
-            'message' => "record deleted successfully!",
+            'message' => "Registro eliminado exitosamente!",
         ], 200);
     }
 
