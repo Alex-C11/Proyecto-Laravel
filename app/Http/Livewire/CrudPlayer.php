@@ -66,6 +66,12 @@ class CrudPlayer extends Component{
         $this->reset(['player']);
     }
 
+    public function edit(Player $player){
+        $this->player=$player;
+        $this->isOpen=true;
+    }
+
+
     public function delete(Player $player){
         $player->delete();
     }
